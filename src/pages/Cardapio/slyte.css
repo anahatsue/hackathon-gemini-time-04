@@ -1,0 +1,61 @@
+.container {
+  box-sizing: border-box;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.box-prato {
+  position: absolute;
+  display: flex;
+  width: calc(100% - 64px);
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+
+.item-container {
+  height: 150px;
+}
+
+.categoria-prato {
+  display: flex;
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+}
+
+.image-prato {
+  position: relative;
+  width: 89px;
+  height: 89px;
+  border-radius: 5px;
+}
+
+.container-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.nome-prato {
+  font-size: 12px;
+  font-weight: 700;
+  position: relative;
+  margin-left: 10px;
+  padding-top: 10px;
+}
+
+.descricao-prato {
+  font-size: 10px;
+  font-weight: 400;
+  position: relative;
+  margin-left: 10px;
+  padding-top: 9px;
+}
+
+.preco {
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-self: flex-end;
+  flex-direction: row;
+  padding-bottom: 10px;
+}
