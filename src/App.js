@@ -35,7 +35,7 @@ function App() {
             exact
             element={<RestaurantesPage />}
           />
-          <Route path="/detalhes/:idRestaurante" element={<p>Teste</p>} />
+          <Route path="/detalhes/:idRestaurante" element={<TelaDetalhes />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

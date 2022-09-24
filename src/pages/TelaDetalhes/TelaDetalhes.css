@@ -1,9 +1,17 @@
 .posicao{
     display:flex;
     justify-content: center;
+    flex-direction: column;
 }
 
+.p {
+    font-family: Tahoma, Verdana, sans-serif;
+    }
+
 .descricao{
-    width: 200px;
-    border: 1px solid black;
+    text-align: center;
+}
+
+.img{
+    width: 100px;
 }

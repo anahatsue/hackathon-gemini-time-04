@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getRestaurantes } from "../../services/restaurantes.service";
 import { getDetails } from "../../services/detalhes.service";
-import { Card } from "@material-ui/core";
+import { Box, Card, CardMedia, Typography } from "@material-ui/core";
+import estrela from "../../assets/estrela.svg";
 import "./TelaDetalhes.css";
 
 function TelaDetalhes() {
@@ -19,18 +19,59 @@ function TelaDetalhes() {
 
   useEffect(() => {
     getDetails(idRestaurante).then((response) => {
-      setnome(response.nome);
-      setdescricao(response.descricao);
-      setendereco(response.endereco);
-      setimagem(response.imagem);
-      setdistancia(response.distancia);
-      setnota(response.nota);
-      settempo(response.tempo_medio);
-      setvalor(response.valor_entrega);
+      console.log(response.data);
+      setnome(response.data.nome);
+      setdescricao(response.data.descricao);
+      setendereco(response.data.endereco);
+      setimagem(response.data.imagem);
+      setdistancia(response.data.distancia);
+      setnota(response.data.nota);
+      settempo(response.data.tempo_medio);
+      setvalor(response.data.valor_entrega);
     });
   }, [idRestaurante]);
 
-  return;
+  return (
+    <div>
+      <Card
+        className="restaurantes-card--card"
+        sx={{
+          backgroundColor: "#D9D9D9",
+        }}
+      >
+        <CardMedia
+          className="logo-restaurante"
+          component="img"
+          image={imagem}
+          alt=""
+        />
+        <Box sx={{ backgroundImage: "#D9D9D9" }}>
+          <Typography className="restaurantes-card--nome">{nome}</Typography>
+          <Typography className="restaurantes-card--distancia" variant="body2">
+            {distancia} km
+          </Typography>
+          <Box className="restaurantes-card--nota">
+            <img src={estrela} alt="Nota do restaurante" />
+            <Typography
+              variant="body2"
+              className="restaurantes-card--texto-nota"
+            >
+              {nota}
+            </Typography>
+          </Box>
+          <Typography className="restaurantes-card--entrega">
+            {tempo}
+          </Typography>
+        </Box>
+      </Card>
+
+      <div class="posicao">
+        <div class="descricao p"> {descricao}</div>
+      </div>
+      <br />
+      <div class="descricao p">{endereco}</div>
+    </div>
+  );
 }
 
 export default TelaDetalhes;
