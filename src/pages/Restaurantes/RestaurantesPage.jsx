@@ -89,9 +89,8 @@ function RestaurantesPage() {
         </div>
       ))}
 
-      {restaurantesCaro?.map((restaurante) => (
-        <div key={restaurante.id}>{restaurante.nome}</div>
-      ))}
+    
+     
     </Container>
   );
 }
