@@ -4,6 +4,7 @@ import { getDetails } from "../../services/detalhes.service";
 import { Box, Card, CardMedia, Typography } from "@material-ui/core";
 import estrela from "../../assets/estrela.svg";
 import "./TelaDetalhes.css";
+import CardapioPage from "../Cardapio";
 
 function TelaDetalhes() {
   const [nome, setnome] = useState();
@@ -70,6 +71,7 @@ function TelaDetalhes() {
       </div>
       <br />
       <div class="descricao p">{endereco}</div>
+      <CardapioPage />
     </div>
   );
 }
