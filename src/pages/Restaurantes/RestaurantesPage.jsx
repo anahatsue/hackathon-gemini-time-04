@@ -16,12 +16,20 @@ function RestaurantesPage() {
   const [restaurantesCaro, setRestaurantesCaro] = useState([]);
   const [loading, setLoading] = useState(true);
 
+<<<<<<< HEAD
   const { id } = useParams();
 
   useEffect(() => {
     getRestaurantes(id).then((response) => {
       console.log(response);
       setNomeCategoria(response.categoria);
+=======
+  const { id } = useParams()
+
+  useEffect(() => {
+    getRestaurantes(id).then((response) => {
+      setNomeCategoria(response.categoria)
+>>>>>>> 4ee0cb76aeb230f8056f6c887cf387923d99c63e
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
       setRestaurantesCaro(response.caro);
