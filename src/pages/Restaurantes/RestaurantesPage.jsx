@@ -13,6 +13,8 @@ function RestaurantesPage() {
   const [loading, setLoading] = useState(true);
   const { id } = useParams()
 
+  const { id } = useParams()
+
   useEffect(() => {
     getRestaurantes(id).then((response) => {
       setNomeCategoria(response.categoria)
