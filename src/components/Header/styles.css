@@ -13,13 +13,19 @@
   font-size: 35px;
   font-weight: 700;
 }
+
+.logoLink {
+  text-decoration: none;
+  color: #fff;
+}
+
 .menu {
   color: white !important;
 }
 
-.menu.MuiButtonBase-root{
+.menu.MuiButtonBase-root {
   background-color: #ed6e27;
-  }
+}
 
 .linkMenu {
   text-decoration: none;
