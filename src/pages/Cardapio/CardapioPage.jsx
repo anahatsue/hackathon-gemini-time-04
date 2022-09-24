@@ -19,8 +19,11 @@ function CardapioPage() {
   };
   useEffect(() => {
     getCardapio();
+    console.log(cardapio)
   }, []);
   console.log("cardapio", cardapio);
+
+
   return (
     <div className="container">
       {cardapio ? (
