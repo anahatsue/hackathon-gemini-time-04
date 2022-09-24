@@ -1,0 +1,37 @@
+.logo-restaurante {
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.restaurantes-card--card {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+  margin: 1rem .5rem;
+  max-height: 100px;
+  box-shadow: none !important;
+  background-color: #D9D9D936 !important;
+  border: none !important;
+  border-radius: 0px 5px 5px 0px !important;
+}
+
+.restaurantes-card--nota {
+  display: flex;
+}
+
+.restaurantes-card--nome {
+  color: #828282;
+  font-weight: 800 !important;
+}
+
+.restaurantes-card--distancia {
+  color: #828282;
+}
+
+.restaurantes-card--texto-nota {
+  color: #ED6E27;
+}
+
+.restaurantes-card--entrega {
+  color: #828282;
+}
