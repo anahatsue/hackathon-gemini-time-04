@@ -1,5 +1,6 @@
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getRestaurantes } from "../../services/restaurantes.service";
 import "./style.css";
 
@@ -9,15 +10,16 @@ function RestaurantesPage() {
   const [restaurantesNoPreco, setRestaurantesNoPreco] = useState([]);
   const [restaurantesCaro, setRestaurantesCaro] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { id } = useParams();
 
   useEffect(() => {
-    getRestaurantes().then((response) => {
-      setNomeCategoria(response.categoria)
+    getRestaurantes(id).then((response) => {
+      setNomeCategoria(response.categoria);
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
       setRestaurantesCaro(response.caro);
       setLoading(false);
-    })
+    });
   }, []);
 
   return (
@@ -35,13 +37,11 @@ function RestaurantesPage() {
           Baratinho <span>(</span>$ <span>$ $ $ $)</span>
         </Typography>
       </div>
-      {restaurantesBaratinho?.map(restaurante => (
-        <div key={restaurante.id}>
-          {restaurante.nome}
-        </div>
+      {restaurantesBaratinho?.map((restaurante) => (
+        <div key={restaurante.id}>{restaurante.nome}</div>
       ))}
     </Container>
-  )
+  );
 }
 
 export default RestaurantesPage;

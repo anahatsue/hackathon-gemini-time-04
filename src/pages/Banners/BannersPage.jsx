@@ -43,7 +43,10 @@ function BannersPage() {
   }
 
   return (
-    <div className="full-height" style={{backgroundColor: selectedBanner['background-color']}}>
+    <div
+      className="full-height"
+      style={{ backgroundColor: selectedBanner["background-color"] }}
+    >
       <Container>
         <div className="title-home">
           <Typography
@@ -61,14 +64,17 @@ function BannersPage() {
         </Typography>
 
         <Typography variant="body2" align="center" className="descricao">
-          {selectedBanner.descricao}
+          {selectedBanner.descriçao}
         </Typography>
 
         <div className="actions">
-          <Fab color="primary" onClick={() => mudarBanner(-1)} disabled={isFirst}>
+          <Fab
+            color="primary"
+            onClick={() => mudarBanner(-1)}
+            disabled={isFirst}
+          >
             <ArrowBackIos />
           </Fab>
-          
           <Button
             variant="contained"
             color="primary"
@@ -81,9 +87,12 @@ function BannersPage() {
             <ArrowForwardIos />
           </Fab>
         </div>
-
       </Container>
-      <img className="main-image" src={selectedBanner.imagem} alt={selectedBanner.nome} />
+      <img
+        className="main-image"
+        src={selectedBanner.imagem}
+        alt={selectedBanner.nome}
+      />
     </div>
   );
 }
