@@ -22,7 +22,8 @@ function BannersPage() {
 
   const getBanners = async () => {
     const result = await getAllBanners();
-    setListaBanners(result.data);
+    const bannerSemUter = result.data.filter(item => !item.nome.includes("UNTER LANCHES"));
+    setListaBanners(bannerSemUter);
     setLoading(false);
   };
 
@@ -43,7 +44,7 @@ function BannersPage() {
   }
 
   return (
-    <div className="full-height" style={{backgroundColor: selectedBanner['background-color']}}>
+    <div className="full-height" style={{ backgroundColor: selectedBanner['background-color'] }}>
       <Container>
         <div className="title-home">
           <Typography
@@ -60,32 +61,37 @@ function BannersPage() {
             {selectedBanner.subtitulo}
           </Typography>
 
-          <Typography variant="body2" align="center" className="descricao">
-            {selectedBanner.descricao}
-          </Typography>
-        </div>
-
-        <div className="actions">
-          <Fab color="primary" onClick={() => mudarBanner(-1)} disabled={isFirst}>
-            <ArrowBackIos />
-          </Fab>
-          
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => navigate("/categorias")}
+          <Typography
+            variant="body2"
+            align="center"
+            className="descricao"
           >
-            Faça seu Pedido
-          </Button>
+            {selectedBanner.descricao}
 
-          <Fab color="primary" onClick={() => mudarBanner(1)} disabled={isLast}>
-            <ArrowForwardIos />
-          </Fab>
+          </Typography>
+
+          <div className="actions">
+            <Fab color="primary" onClick={() => mudarBanner(-1)} disabled={isFirst}>
+              <ArrowBackIos />
+            </Fab>
+
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/categorias")}
+            >
+              Faça seu Pedido
+            </Button>
+
+            <Fab color="primary" onClick={() => mudarBanner(1)} disabled={isLast}>
+              <ArrowForwardIos />
+            </Fab>
+          </div>
         </div>
 
-      </Container>
+      </Container >
       <img className="main-image" src={selectedBanner.imagem} alt={selectedBanner.nome} />
-    </div>
+    </div >
   );
 }
 
