@@ -24,6 +24,7 @@ function BannersPage() {
     const result = await getAllBanners();
     setListaBanners(result.data);
     setLoading(false);
+    // console.log(result);
   };
 
   useEffect(() => {
