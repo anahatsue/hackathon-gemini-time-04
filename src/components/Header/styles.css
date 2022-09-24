@@ -13,17 +13,28 @@
   font-size: 35px;
   font-weight: 700;
 }
+
+.logoLink {
+  text-decoration: none;
+  color: #fff;
+}
+
 .menu {
   color: white !important;
 }
 
-.menu.MuiButtonBase-root{
+.menu.MuiButtonBase-root {
   background-color: #ed6e27;
-  }
+}
+
+.menu.MuiButtonBase-root:hover {
+  background-color: #e46a25;
+}
 
 .linkMenu {
   text-decoration: none;
 }
+
 .paper {
   top: 58px !important;
   left: -16px !important;

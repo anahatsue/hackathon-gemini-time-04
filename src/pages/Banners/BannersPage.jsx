@@ -69,6 +69,7 @@ function BannersPage() {
           <Fab color="primary" onClick={() => mudarBanner(-1)} disabled={isFirst}>
             <ArrowBackIos />
           </Fab>
+          
           <Button
             variant="contained"
             color="primary"
