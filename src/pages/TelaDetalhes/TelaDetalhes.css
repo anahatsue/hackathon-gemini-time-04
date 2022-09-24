@@ -1,0 +1,9 @@
+.posicao{
+    display:flex;
+    justify-content: center;
+}
+
+.descricao{
+    width: 200px;
+    border: 1px solid black;
+}
