@@ -25,7 +25,6 @@ function BannersPage() {
     const bannerSemUter = result.data.filter(item => !item.nome.includes("UNTER LANCHES"));
     setListaBanners(bannerSemUter);
     setLoading(false);
-    console.log(result);
   };
 
   useEffect(() => {
