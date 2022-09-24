@@ -22,9 +22,10 @@ function BannersPage() {
 
   const getBanners = async () => {
     const result = await getAllBanners();
-    setListaBanners(result.data);
+    const bannerSemUter = result.data.filter(item => !item.nome.includes("UNTER LANCHES"));
+    setListaBanners(bannerSemUter);
     setLoading(false);
-    // console.log(result);
+    console.log(result);
   };
 
   useEffect(() => {
@@ -61,8 +62,13 @@ function BannersPage() {
             {selectedBanner.subtitulo}
           </Typography>
 
-          <Typography variant="body2" align="center" className="descricao">
+          <Typography
+            variant="body2"
+            align="center"
+            className="descricao"
+          >
             {selectedBanner.descricao}
+
           </Typography>
 
           <div className="actions">
@@ -84,9 +90,9 @@ function BannersPage() {
           </div>
         </div>
 
-      </Container>
+      </Container >
       <img className="main-image" src={selectedBanner.imagem} alt={selectedBanner.nome} />
-    </div>
+    </div >
   );
 }
 
