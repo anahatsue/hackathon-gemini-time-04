@@ -22,7 +22,10 @@ function BannersPage() {
 
   const getBanners = async () => {
     const result = await getAllBanners();
-    setListaBanners(result.data);
+    const bannerSemUter = result.data.filter(
+      (item) => !item.nome.includes("UNTER LANCHES")
+    );
+    setListaBanners(bannerSemUter);
     setLoading(false);
   };
 
@@ -70,27 +73,31 @@ function BannersPage() {
           <Typography variant="body2" align="center" className="descricao">
             {selectedBanner.descricao}
           </Typography>
-        </div>
 
-        <div className="actions">
-          <Fab
-            color="primary"
-            onClick={() => mudarBanner(-1)}
-            disabled={isFirst}
-          >
-            <ArrowBackIos />
-          </Fab>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => navigate("/categorias")}
-          >
-            Faça seu Pedido
-          </Button>
+          <div className="actions">
+            <Fab
+              color="primary"
+              onClick={() => mudarBanner(-1)}
+              disabled={isFirst}
+            >
+              <ArrowBackIos />
+            </Fab>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/categorias")}
+            >
+              Faça seu Pedido
+            </Button>
 
-          <Fab color="primary" onClick={() => mudarBanner(1)} disabled={isLast}>
-            <ArrowForwardIos />
-          </Fab>
+            <Fab
+              color="primary"
+              onClick={() => mudarBanner(1)}
+              disabled={isLast}
+            >
+              <ArrowForwardIos />
+            </Fab>
+          </div>
         </div>
       </Container>
       <img
