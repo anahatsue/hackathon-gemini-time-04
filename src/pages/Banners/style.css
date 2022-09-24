@@ -1,5 +1,5 @@
 .full-height {
-  height: calc(100vh - 98px);
+  height: auto;
 }
 
 .full-height .MuiContainer-root {
