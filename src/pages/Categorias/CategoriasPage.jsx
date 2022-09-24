@@ -17,6 +17,7 @@ function CategoriasPage() {
 
 	const getCategorias = async () => {
 		const result = await getAllCategorias();
+		console.log(result)
 		setCategorias(result.data);
 		setLoading(false);
 	};
@@ -43,7 +44,7 @@ function CategoriasPage() {
 							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
 						>
 							<img
-								src={categoria.imagem}
+								src={categoria.imagem + '.png'}
 								alt={categoria.nome}
 								className="imgCategory"
 							/>
