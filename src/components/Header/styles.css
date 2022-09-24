@@ -27,9 +27,14 @@
   background-color: #ed6e27;
 }
 
+.menu.MuiButtonBase-root:hover {
+  background-color: #e46a25;
+}
+
 .linkMenu {
   text-decoration: none;
 }
+
 .paper {
   top: 58px !important;
   left: -16px !important;
