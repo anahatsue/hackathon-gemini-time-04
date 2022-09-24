@@ -34,7 +34,7 @@ function CardapioPage() {
                 <img src={item.imagem} className="image-prato" />
                 <div className="container-texto">
                   <label className="nome-prato">{item.nome}</label>
-                  <label className="descricao-prato">{item.descrição}</label>
+                  <label className="descricao-prato">{item.descricao}</label>
                 </div>
                 <div className="preco">
                   <label>R$ {item.valor}</label>
