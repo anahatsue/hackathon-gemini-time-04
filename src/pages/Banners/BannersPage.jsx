@@ -66,10 +66,6 @@ function BannersPage() {
             {selectedBanner.subtitulo}
           </Typography>
 
-          <Typography variant="body1" align="center" className="subtitle">
-            {selectedBanner.subtitulo}
-          </Typography>
-
           <Typography variant="body2" align="center" className="descricao">
             {selectedBanner.descricao}
           </Typography>
@@ -82,6 +78,7 @@ function BannersPage() {
             >
               <ArrowBackIos />
             </Fab>
+
             <Button
               variant="contained"
               color="primary"

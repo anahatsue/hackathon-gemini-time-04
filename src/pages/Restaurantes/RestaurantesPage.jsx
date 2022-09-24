@@ -1,6 +1,6 @@
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 import RestauranteCard from "../../components/RestauranteCard/RestauranteCard";
 import { getRestaurantes } from "../../services/restaurantes.service";
 import "./style.css";
@@ -15,12 +15,8 @@ function RestaurantesPage() {
 
   useEffect(() => {
     getRestaurantes(id).then((response) => {
-<<<<<<< HEAD
+      // console.log(response)
       setNomeCategoria(response.categoria);
-=======
-      console.log(response)
-      setNomeCategoria(response.categoria)
->>>>>>> a330aba0957b05035fb192c38a42e5a6e36d2abb
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
       setRestaurantesCaro(response.caro);
@@ -38,51 +34,56 @@ function RestaurantesPage() {
           <CircularProgress color="primary" />
         </div>
       )}
-      {restaurantesBaratinho && <div className="sub-header">
-        <Typography className="categoria-restaurante" variant="body1" color="primary">
-          Baratinho <span>(</span>$ <span>$ $ $ $)</span>
-        </Typography>
-<<<<<<< HEAD
-      </div>
+      {restaurantesBaratinho && (
+        <div className="sub-header">
+          <Typography
+            className="categoria-restaurante"
+            variant="body1"
+            color="primary"
+          >
+            Baratinho <span>(</span>$ <span>$ $ $ $)</span>
+          </Typography>
+        </div>
+      )}
       {restaurantesBaratinho?.map((restaurante) => (
-        <div key={restaurante.id}>{restaurante.nome}</div>
+        <div key={restaurante.id}>
+          <RestauranteCard restaurante={restaurante} />
+        </div>
+      ))}
+      {restaurantesNoPreco && (
+        <div className="sub-header">
+          <Typography
+            className="categoria-restaurante"
+            variant="body1"
+            color="primary"
+          >
+            No preço <span>(</span>$ $ $<span> $ $)</span>
+          </Typography>
+        </div>
+      )}
+      {restaurantesNoPreco?.map((restaurante) => (
+        <div key={restaurante.id}>
+          <RestauranteCard restaurante={restaurante} />
+        </div>
+      ))}
+      {restaurantesCaro && (
+        <div className="sub-header">
+          <Typography
+            className="categoria-restaurante"
+            variant="body1"
+            color="primary"
+          >
+            Caro, mas vale a pena <span>(</span>$ $ $ $ $<span>)</span>
+          </Typography>
+        </div>
+      )}
+      {restaurantesCaro?.map((restaurante) => (
+        <div key={restaurante.id}>
+          <RestauranteCard restaurante={restaurante} />
+        </div>
       ))}
     </Container>
   );
-}
-
-export default RestaurantesPage;
-=======
-      </div>}
-      {restaurantesBaratinho?.map(restaurante => (
-        <div key={restaurante.id}>
-          <RestauranteCard restaurante={restaurante} />
-        </div>
-      ))}
-      {restaurantesNoPreco && <div className="sub-header">
-        <Typography className="categoria-restaurante" variant="body1" color="primary">
-          No preço <span>(</span>$ $ $<span> $ $)</span>
-        </Typography>
-      </div>}
-      {restaurantesNoPreco?.map(restaurante => (
-        <div key={restaurante.id}>
-          <RestauranteCard restaurante={restaurante} />
-        </div>
-      ))}
-      {restaurantesCaro && <div className="sub-header">
-        <Typography className="categoria-restaurante" variant="body1" color="primary">
-          Caro, mas vale a pena <span>(</span>$ $ $ $ $<span>)</span>
-        </Typography>
-      </div>}
-      {restaurantesCaro?.map(restaurante => (
-        <div key={restaurante.id}>
-          <RestauranteCard restaurante={restaurante} />
-        </div>
-      ))}
-    </Container>
-
-
-  )
 }
 
 export default RestaurantesPage;
@@ -106,4 +107,3 @@ export default RestaurantesPage;
 //     </div>
 //   ))}
 // </Container> */}
->>>>>>> a330aba0957b05035fb192c38a42e5a6e36d2abb
