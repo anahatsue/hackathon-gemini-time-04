@@ -24,6 +24,7 @@ function BannersPage() {
     const result = await getAllBanners();
     setListaBanners(result.data);
     setLoading(false);
+    // console.log(result);
   };
 
   useEffect(() => {
@@ -43,7 +44,7 @@ function BannersPage() {
   }
 
   return (
-    <div className="full-height" style={{backgroundColor: selectedBanner['background-color']}}>
+    <div className="full-height" style={{ backgroundColor: selectedBanner['background-color'] }}>
       <Container>
         <div className="title-home">
           <Typography
@@ -63,24 +64,24 @@ function BannersPage() {
           <Typography variant="body2" align="center" className="descricao">
             {selectedBanner.descricao}
           </Typography>
-        </div>
 
-        <div className="actions">
-          <Fab color="primary" onClick={() => mudarBanner(-1)} disabled={isFirst}>
-            <ArrowBackIos />
-          </Fab>
-          
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => navigate("/categorias")}
-          >
-            Faça seu Pedido
-          </Button>
+          <div className="actions">
+            <Fab color="primary" onClick={() => mudarBanner(-1)} disabled={isFirst}>
+              <ArrowBackIos />
+            </Fab>
 
-          <Fab color="primary" onClick={() => mudarBanner(1)} disabled={isLast}>
-            <ArrowForwardIos />
-          </Fab>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/categorias")}
+            >
+              Faça seu Pedido
+            </Button>
+
+            <Fab color="primary" onClick={() => mudarBanner(1)} disabled={isLast}>
+              <ArrowForwardIos />
+            </Fab>
+          </div>
         </div>
 
       </Container>

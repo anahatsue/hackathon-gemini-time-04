@@ -18,7 +18,6 @@ function CategoriasPage() {
 
   const getCategorias = async () => {
     const result = await getAllCategorias();
-    console.log(result);
     setCategorias(result.data);
     setLoading(false);
   };

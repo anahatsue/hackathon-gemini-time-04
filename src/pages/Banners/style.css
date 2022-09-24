@@ -1,5 +1,5 @@
 .full-height {
-  height: calc(100vh - 98px);
+  height: auto;
 }
 
 .full-height .MuiContainer-root {
@@ -11,35 +11,34 @@
   display: flex;
   min-height: 64px;
   justify-content: center;
+  font-size: 64px;
 }
 
 .full-height .MuiTypography-h5 {
   width: 50%;
 }
 
-.full-height .subtitulo  {
+.full-height .subtitulo {
   display: flex;
   flex-direction: column;
-  
+
 }
 
 .full-height .subtitle {
   display: flex;
   padding-bottom: 14px;
-  min-height: 62px;
+  min-height: 100%;
   max-width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 24px;
+
 }
 
 .full-height .descricao {
   min-height: 140px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  font-size: 10px;
+  font-size: 18px;
 }
 
 .full-height .actions {
@@ -51,6 +50,8 @@
 .full-height .actions .MuiButton-contained {
   width: calc(100vw - 200px);
   font-weight: 700;
+  font-size: 20px;
+  text-transform: capitalize;
 }
 
 .full-height .actions .MuiFab-label {

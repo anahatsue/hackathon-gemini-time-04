@@ -35,6 +35,7 @@ function App() {
             exact
             element={<RestaurantesPage />}
           />
+          <Route path="/detalhes/:idRestaurante" element={<p>Teste</p>} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
