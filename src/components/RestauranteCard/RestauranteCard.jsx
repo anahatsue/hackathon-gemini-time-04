@@ -2,6 +2,7 @@ import { Box, Card, CardMedia, Typography } from '@material-ui/core';
 import React from 'react';
 import './styles.css'
 import estrela from '../../assets/estrela.svg'
+import { useNavigate } from 'react-router-dom';
 
 function RestauranteCard({ restaurante }) {
 
@@ -13,7 +14,7 @@ function RestauranteCard({ restaurante }) {
   })
 
   const precoEntregaFormatado = formatador.format(restaurante.valor_entrega)
-
+  const navigate = useNavigate()
 
   return (
     <div className="restaurantes-card">
@@ -22,6 +23,7 @@ function RestauranteCard({ restaurante }) {
         sx={{
           backgroundColor: '#D9D9D9'
         }}
+        onClick={() => navigate(`/detalhes/${restaurante.id}`)}
       >
         <CardMedia
           className="logo-restaurante"
