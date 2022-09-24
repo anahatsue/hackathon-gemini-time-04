@@ -31,6 +31,17 @@ function TelaDetalhes() {
     });
   }, [idRestaurante]);
 
+  // Filtro
+  // const [filtro, setFiltro] = useState("");
+
+  // const handleChange = (event) => {
+  //   setFiltro(event.target.value);
+  // };
+
+  // const buscaFiltrada = cardapio.filter((item) =>
+  //   item.includes(filtro.toLowerCase())
+  // );
+
   return (
     <div>
       <Card
@@ -68,8 +79,25 @@ function TelaDetalhes() {
       <div class="posicao">
         <div class="descricao p"> {descricao}</div>
       </div>
+
       <br />
+
       <div class="descricao p">{endereco}</div>
+
+
+      {/* Filtro */}
+      {/* <input
+        type="text"
+        onChange={(event) => handleChange(event)}
+        value={filtro}
+      /> 
+
+       implementar após cardápio
+      {
+          buscaFiltrada.length > 0 ? buscaFiltrada.map(...) : cardapio.map(...)
+      } */}
+
+
     </div>
   );
 }
