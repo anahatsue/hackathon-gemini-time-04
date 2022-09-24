@@ -18,7 +18,14 @@
   width: 50%;
 }
 
+.full-height .subtitulo {
+  display: flex;
+  flex-direction: column;
+
+}
+
 .full-height .subtitle {
+  display: flex;
   padding-bottom: 14px;
   min-height: 100%;
   max-width: 100%;
