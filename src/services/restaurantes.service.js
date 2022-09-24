@@ -7,4 +7,4 @@ export async function getRestaurantes(id) {
   } catch (err) {
     throw err;
   }
-};
+}

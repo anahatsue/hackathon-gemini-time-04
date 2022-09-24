@@ -10,8 +10,10 @@
   padding: 41px 0 17px 0;
   display: flex;
   min-height: 64px;
+  min-width: 100%;
   justify-content: center;
   font-size: 64px;
+
 }
 
 .full-height .MuiTypography-h5 {

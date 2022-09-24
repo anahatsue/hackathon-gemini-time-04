@@ -1,10 +1,10 @@
 import Api from "./api";
 
-export function getDetails (id) {
+export function getDetails(id) {
   try {
     const detalhes = Api.get(`/detalhes/${id}.json`);
-    return detalhes.data;
+    return detalhes;
   } catch (err) {
     throw err;
   }
-};
+}
