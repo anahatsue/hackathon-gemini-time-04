@@ -1,3 +1,8 @@
 .restaurantes .sub-header span {
   color: #DEDDDD;
 }
+
+.categoria-restaurante {
+  font-weight: 700 !important;
+  margin-left: .5rem !important;
+}

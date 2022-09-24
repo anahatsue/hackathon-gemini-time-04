@@ -34,34 +34,34 @@ function RestaurantesPage() {
           <CircularProgress color="primary" />
         </div>
       )}
-      <div className="sub-header">
-        <Typography variant="body1" color="primary">
+      {restaurantesBaratinho && <div className="sub-header">
+        <Typography className="categoria-restaurante" variant="body1" color="primary">
           Baratinho <span>(</span>$ <span>$ $ $ $)</span>
         </Typography>
-      </div>
+      </div>}
       {restaurantesBaratinho?.map(restaurante => (
         <div key={restaurante.id}>
           <RestauranteCard restaurante={restaurante} />
         </div>
       ))}
-      <div className="sub-header">
-        <Typography variant="body1" color="primary">
+      {restaurantesNoPreco && <div className="sub-header">
+        <Typography className="categoria-restaurante" variant="body1" color="primary">
           No preço <span>(</span>$ $ $<span> $ $)</span>
         </Typography>
-      </div>
+      </div>}
       {restaurantesNoPreco?.map(restaurante => (
         <div key={restaurante.id}>
-          {restaurante.nome}
+          <RestauranteCard restaurante={restaurante} />
         </div>
       ))}
-      <div className="sub-header">
-        <Typography variant="body1" color="primary">
+      {restaurantesCaro && <div className="sub-header">
+        <Typography className="categoria-restaurante" variant="body1" color="primary">
           Caro, mas vale a pena <span>(</span>$ $ $ $ $<span>)</span>
         </Typography>
-      </div>
+      </div>}
       {restaurantesCaro?.map(restaurante => (
         <div key={restaurante.id}>
-          {restaurante.nome}
+          <RestauranteCard restaurante={restaurante} />
         </div>
       ))}
     </Container>
