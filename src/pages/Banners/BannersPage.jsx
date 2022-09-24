@@ -55,14 +55,15 @@ function BannersPage() {
             {selectedBanner.nome}
           </Typography>
         </div>
+        <div className="subtitulo">
+          <Typography variant="body1" align="center" className="subtitle">
+            {selectedBanner.subtitulo}
+          </Typography>
 
-        <Typography variant="body1" align="center" className="subtitle">
-          {selectedBanner.subtitulo}
-        </Typography>
-
-        <Typography variant="body2" align="center" className="descricao">
-          {selectedBanner.descriçao}
-        </Typography>
+          <Typography variant="body2" align="center" className="descricao">
+            {selectedBanner.descricao}
+          </Typography>
+        </div>
 
         <div className="actions">
           <Fab color="primary" onClick={() => mudarBanner(-1)} disabled={isFirst}>
