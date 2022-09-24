@@ -44,6 +44,7 @@
   width: calc(100vw - 200px);
   font-weight: 700;
   font-size: 20px;
+  text-transform: capitalize;
 }
 
 .full-height .actions .MuiFab-label {
