@@ -61,13 +61,14 @@ function BannersPage() {
         </Typography>
 
         <Typography variant="body2" align="center" className="descricao">
-          {selectedBanner.descriçao}
+          {selectedBanner.descricao}
         </Typography>
 
         <div className="actions">
           <Fab color="primary" onClick={() => mudarBanner(-1)} disabled={isFirst}>
             <ArrowBackIos />
           </Fab>
+          
           <Button
             variant="contained"
             color="primary"
